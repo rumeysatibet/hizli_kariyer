@@ -25,7 +25,7 @@ const JobsPage = () => {
 
   const handleApply = (jobId) => {
     axios
-      .post(`http://localhost:8001/api/v1/application/apply/${jobId}`)
+      .post(`https://hizli-kariyer-backend.onrender.com/api/v1/application/apply/${jobId}`)
       .then(() => alert("Başvurunuz alındı!"))
       .catch(() => alert("Başvuru yapılamadı! Lütfen tekrar deneyin."));
   };
