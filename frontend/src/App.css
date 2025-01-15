@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Genel Stiller */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Yatay taşmayı engeller */
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom, #6a0dad, #8a2be2);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Input Fields */
+input[type="text"], input[type="email"], input[type="password"], select {
+  color: black; /* Kullanıcının girdiği yazılar siyah renkte olacak */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+  outline: none;
+  border-color: #8a2be2;
+  box-shadow: 0 0 5px #8a2be2;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #7b68ee, #6a0dad);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo span {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-buttons a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #8a2be2, #9d72fc);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-buttons a:hover {
+  transform: scale(1.05); /* Hafif büyütme efekti */
+}
+
+/* Mobile Menü */
+.navbar-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 15px;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #6a0dad;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-buttons {
+    display: none; /* Desktop menüyü gizle */
+  }
+
+  .navbar-menu-button {
+    display: block; /* Mobil menü butonunu göster */
+  }
+
+  .navbar-menu {
+    display: none; /* Varsayılan olarak gizli */
+  }
+
+  .navbar-menu.active {
+    display: flex; /* Menü açıldığında göster */
+    flex-direction: column;
+    width: 100%;
+    right: 0;
+    top: 60px;
+    padding: 20px;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #6a0dad, #8a2be2);
+  color: white;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 span {
+  color: #ffd700; /* Altın sarısı vurgu */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section input {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+}
+
+.hero-section button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  background-color: #8a2be2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section button:hover {
+  background-color: #6a0dad;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .navigation-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Form Container */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #6b46c1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #553c9a;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #6a0dad;
+  border: 1px solid #6a0dad;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f3e8ff;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Links */
+.navbar-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #b794f4;
+}
