@@ -23,7 +23,7 @@ const AddCompanyPage = () => {
     try {
       // İş bilgilerini kaydet
       const jobResponse = await axios.post(
-        "http://localhost:8001/api/v1/job/post",
+        "https://hizli-kariyer-backend.onrender.com/api/v1/job/post",
         jobData
       );
       console.log("Job Response:", jobResponse.data);
