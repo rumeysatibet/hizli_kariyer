@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const whitelist = ['http://localhost:5173', 'http://your-production-domain.com'];
+const whitelist = ['http://localhost:5173', 'https://hizli-kariyer-frontend.onrender.com'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
