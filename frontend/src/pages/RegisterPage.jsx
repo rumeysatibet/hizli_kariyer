@@ -25,7 +25,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8001/api/v1/user/register", formData);
+      const response = await axios.post("https://hizli-kariyer-backend.onrender.com/api/v1/user/register", formData);
 
       console.log("API Response:", response.data);
 
