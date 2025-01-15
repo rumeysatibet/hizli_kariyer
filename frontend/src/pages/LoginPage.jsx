@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8001/api/v1/user/login", {
+      const response = await fetch("https://hizli-kariyer-backend.onrender.com/api/v1/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
